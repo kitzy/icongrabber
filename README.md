@@ -26,17 +26,18 @@
 Download the latest signed and notarized installer from [Releases](https://github.com/kitzy/icongrabber/releases):
 
 ```bash
-# Download the PKG installer
-curl -LO https://github.com/kitzy/icongrabber/releases/latest/download/icongrabber-1.0.0.pkg
+# Download the latest PKG installer
+curl -LO $(curl -s https://api.github.com/repos/kitzy/icongrabber/releases/latest | grep "browser_download_url.*\.pkg" | cut -d '"' -f 4)
 
-# Install (no Gatekeeper warnings!)
-sudo installer -pkg icongrabber-1.0.0.pkg -target /
+# Or if you know the latest version number, use:
+# curl -LO https://github.com/kitzy/icongrabber/releases/latest/download/icongrabber-VERSION.pkg
+
+# Install
+sudo installer -pkg icongrabber-*.pkg -target /
 
 # Verify installation
 icongrabber --version
 ```
-
-The PKG installer is fully signed and notarized - no security warnings!
 
 ### Build from Source
 
