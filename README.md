@@ -8,7 +8,12 @@
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
 [![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
 [![CI Tests](https://github.com/kitzy/icongrabber/workflows/CI%20Tests/badge.svg)](https://github.com/kitzy/icongrabber/actions)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/kitzy?logo=github&color=ea4aaa)](https://github.com/sponsors/kitzy)
+
+---
+
+**Found this tool helpful?** Consider [sponsoring the project](https://github.com/sponsors/kitzy) to support ongoing development and maintenance. Your support helps keep Icon Grabber free and open source for everyone!
+
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/kitzy?logo=github&color=ea4aaa&style=for-the-badge)](https://github.com/sponsors/kitzy)
 
 </div>
 
