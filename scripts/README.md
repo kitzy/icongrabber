@@ -31,7 +31,4 @@ All the GitHub secrets values you need for the release workflow, ready to copy a
 
 ---
 
-For more information on setting up releases, see:
-- [Release Setup Guide](../.github/RELEASE_SETUP.md)
-- [Creating Releases](../.github/CREATING_RELEASES.md)
-
+For more information on setting up releases, see [Release Guide](../.github/RELEASE_GUIDE.md).

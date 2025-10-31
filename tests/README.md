@@ -63,8 +63,7 @@ The tool detects when running in non-interactive mode (CI, piped input, etc.) us
 ## GitHub Actions
 
 Tests run automatically on:
-- Push to `main` or `develop` branches
-- Pull requests to `main` or `develop`
+- Pull requests to `main` or `development` branches
 - Manual workflow dispatch
 
 See `.github/workflows/ci.yml` for the full CI configuration.

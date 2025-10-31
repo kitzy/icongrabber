@@ -99,7 +99,7 @@ func printHelp() {
         icongrabber /Applications/Safari.app
         
         # Extract to specific location with custom size
-        icongrabber -i /Applications/Safari.app -o ~/Desktop/safari.png -s 256
+        icongrabber -i /Applications/Safari.app -o ~/Desktop/Safari.png -s 256
         
         # Overwrite existing file without prompting
         icongrabber /Applications/Safari.app -f

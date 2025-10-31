@@ -56,7 +56,7 @@ export PATH="$HOME/.local/bin:$PATH" # Add to ~/.zshrc
 
 ## Quick Start
 
-Extract an icon in 30 seconds:
+Extract an icon in less than 30 seconds:
 
 ```bash
 # Extract Safari's icon (creates Safari.png)
@@ -256,8 +256,10 @@ View the [CI workflow](.github/workflows/ci.yml) for details.
 
 ## Documentation
 
-- [Quick Start Guide](QUICKSTART.md) - Detailed getting started guide
-- [Examples](examples/README.md) - Example scripts and use cases
+- [Contributing Guide](CONTRIBUTING.md) - How to contribute
+- [Release Guide](.github/RELEASE_GUIDE.md) - For maintainers: creating releases
+- [Test Documentation](tests/README.md) - Test suite details
+- [Scripts Documentation](scripts/README.md) - Helper scripts
 - Man Page - `man icongrabber` (after installation)
 
 ## FAQ
@@ -292,34 +294,24 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Creating Releases
 
-To create a new signed and notarized release:
+See the complete [Release Guide](.github/RELEASE_GUIDE.md) for detailed instructions.
 
+**Quick release:**
 ```bash
+# 1. Update CHANGELOG.md
+# 2. Create and push tag
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
-The [release workflow](.github/workflows/release.yml) will automatically:
-- Build and sign the binary
-- Create a signed `.pkg` installer
-- Notarize with Apple (no Gatekeeper warnings!)
-- Create a GitHub release with all artifacts
+The workflow automatically builds, signs, notarizes, and publishes the release.
 
-**Documentation:**
-- [Release Setup Guide](.github/RELEASE_SETUP.md) - Configure code signing (one-time)
-- [Creating Releases](.github/CREATING_RELEASES.md) - Release process
-- [Quick Reference](.github/QUICK_REFERENCE.md) - Command cheat sheet
-- [Workflow Architecture](.github/WORKFLOW_ARCHITECTURE.md) - Technical details
-
-### Setup Signing
-
-First-time setup to enable code signing and notarization:
-
+**First-time setup:**
 ```bash
 ./scripts/setup_signing.sh
 ```
 
-This interactive script will guide you through exporting your Apple Developer certificates and configuring GitHub secrets.
+This configures code signing and notarization (requires Apple Developer account).
 
 ## License
 
