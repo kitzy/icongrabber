@@ -7,6 +7,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
 [![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
+[![CI Tests](https://github.com/kitzy/icongrabber/workflows/CI%20Tests/badge.svg)](https://github.com/kitzy/icongrabber/actions)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/kitzy?logo=github&color=ea4aaa)](https://github.com/sponsors/kitzy)
 
 </div>
