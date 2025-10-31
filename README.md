@@ -4,8 +4,6 @@
 
 **A fast, simple command-line tool to extract high-quality icons from macOS applications.**
 
-Perfect for developers, designers, and anyone who needs app icons for websites, documentation, or projects.
-
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
 [![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
