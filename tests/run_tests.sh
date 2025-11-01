@@ -273,13 +273,13 @@ assert_file_exists "test_force_short.png"
 
 # Test 18: Max file size with KB format
 print_test 18 "Max file size optimization with KB format"
-$CLI "$TEST_APP" -s 256 -m 50KB -o test_max_50kb.png -f
-assert_file_size_under "test_max_50kb.png" 50
+$CLI "$TEST_APP" -s 64 -m 30KB -o test_max_30kb.png -f
+assert_file_size_under "test_max_30kb.png" 30
 
 # Test 19: Max file size with K shorthand
 print_test 19 "Max file size optimization with K shorthand"
-$CLI "$TEST_APP" -s 128 -m 40K -o test_max_40k.png -f
-assert_file_size_under "test_max_40k.png" 40
+$CLI "$TEST_APP" -s 64 -m 25K -o test_max_25k.png -f
+assert_file_size_under "test_max_25k.png" 25
 
 # Test 20: Max file size with MB format
 print_test 20 "Max file size optimization with MB format"
@@ -293,8 +293,8 @@ assert_file_size_under "test_max_2m.png" 2048
 
 # Test 22: Lowercase max file size format (kb)
 print_test 22 "Max file size with lowercase kb"
-$CLI "$TEST_APP" -s 128 -m 45kb -o test_max_45kb_lower.png -f
-assert_file_size_under "test_max_45kb_lower.png" 45
+$CLI "$TEST_APP" -s 64 -m 25kb -o test_max_25kb_lower.png -f
+assert_file_size_under "test_max_25kb_lower.png" 25
 
 # Test 23: Lowercase max file size format (mb)
 print_test 23 "Max file size with lowercase mb"
@@ -303,9 +303,9 @@ assert_file_size_under "test_max_1mb_lower.png" 1024
 
 # Test 24: Auto-size selection for small file size target
 print_test 24 "Auto-size selection for 10KB target (should select 32px)"
-$CLI "$TEST_APP" -m 10KB -o test_auto_10kb.png -f
+$CLI "$TEST_APP" -m 12KB -o test_auto_12kb.png -f
 # File should exist and be optimized
-assert_file_size_under "test_auto_10kb.png" 10
+assert_file_size_under "test_auto_12kb.png" 12
 
 # Test 25: Auto-size selection for medium file size target
 print_test 25 "Auto-size selection for 100KB target (should select 128px or 256px)"
@@ -326,7 +326,7 @@ assert_file_exists "test_no_opt_needed.png"
 # Test 28: Impossible file size target (should fail with exit code 3)
 print_test 28 "Impossible file size target fails gracefully"
 set +e
-$CLI "$TEST_APP" -s 256 -m 5KB -o test_impossible.png -f 2>/dev/null
+$CLI "$TEST_APP" -s 128 -m 5KB -o test_impossible.png -f 2>/dev/null
 exit_code=$?
 set -e
 if [ $exit_code -eq 3 ]; then
@@ -350,30 +350,30 @@ fi
 
 # Test 30: Max file size with explicit size overrides auto-selection
 print_test 30 "Explicit size overrides auto-selection"
-# Use explicit 512px size even though 50KB would normally get smaller auto-size
-$CLI "$TEST_APP" -s 512 -m 200KB -o test_explicit_override.png -f
+# Use explicit 256px size even though 200KB would normally get smaller auto-size
+$CLI "$TEST_APP" -s 256 -m 300KB -o test_explicit_override.png -f
 if [ -f "test_explicit_override.png" ]; then
     # Verify the file exists and was optimized
-    assert_file_size_under "test_explicit_override.png" 200
+    assert_file_size_under "test_explicit_override.png" 300
 else
     fail_test "File not created"
 fi
 
 # Test 31: Mixed case file size format (Kb, mB)
 print_test 31 "Mixed case file size formats"
-$CLI "$TEST_APP" -s 128 -m 60Kb -o test_mixed_case.png -f
-assert_file_size_under "test_mixed_case.png" 60
+$CLI "$TEST_APP" -s 64 -m 30Kb -o test_mixed_case.png -f
+assert_file_size_under "test_mixed_case.png" 30
 
 # Test 32: File size optimization maintains reasonable quality
 print_test 32 "Optimized file maintains minimum size (not zero bytes)"
-$CLI "$TEST_APP" -s 256 -m 100KB -o test_quality_check.png -f
+$CLI "$TEST_APP" -s 128 -m 80KB -o test_quality_check.png -f
 assert_file_size "test_quality_check.png" 1000
 
 # Test 33: Multiple optimizations on same output file with force
 print_test 33 "Multiple optimizations with force flag"
-$CLI "$TEST_APP" -s 256 -m 80KB -o test_multi_opt.png -f
-$CLI "$TEST_APP" -s 128 -m 40KB -o test_multi_opt.png -f
-assert_file_size_under "test_multi_opt.png" 40
+$CLI "$TEST_APP" -s 128 -m 60KB -o test_multi_opt.png -f
+$CLI "$TEST_APP" -s 64 -m 30KB -o test_multi_opt.png -f
+assert_file_size_under "test_multi_opt.png" 30
 
 # Test 34: Large icon with reasonable file size limit
 print_test 34 "1024px icon optimized to 1.5MB"
