@@ -306,14 +306,7 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
-The workflow automatically builds, signs, notarizes, and publishes the release.
-
-**First-time setup:**
-```bash
-./scripts/setup_signing.sh
-```
-
-This configures code signing and notarization (requires Apple Developer account).
+The workflow automatically builds and publishes the release.
 
 ## License
 
