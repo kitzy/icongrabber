@@ -2,7 +2,7 @@
 
 # Icon Grabber
 
-**A fast, leightweight command-line tool to extract high-quality icons from macOS applications.**
+**A fast, lightweight command-line tool to extract high-quality icons from macOS applications.**
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://www.apple.com/macos/)
