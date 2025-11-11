@@ -34,7 +34,7 @@
 
 ### Download Release (Recommended)
 
-Download the latest signed and notarized installer from [Releases](https://github.com/kitzy/icongrabber/releases):
+Download the latest installer from [Releases](https://github.com/kitzy/icongrabber/releases):
 
 ```bash
 # Download the latest PKG installer
